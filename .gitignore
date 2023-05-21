@@ -1,4 +1,4 @@
-
+Game Inventory Demo/Assets/Store Assets
 Game Inventory Demo/Library/
 Game Inventory Demo/Temp/
 Game Inventory Demo/Obj/
@@ -20,6 +20,7 @@ Game Inventory Demo/UserSettings/
 
 # Visual Studio cache directory
 .vs/
+.idea/
 
 # Gradle cache directory
 .gradle/
