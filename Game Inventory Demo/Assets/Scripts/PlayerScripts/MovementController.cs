@@ -12,7 +12,7 @@ public class MovementController : MonoBehaviour
     private Vector2 _movementInput;
 
     private Vector2 _smoothedMovementInput;
-    private Vector2 _smooothVelocity;
+    private Vector2 _smoothVelocity;
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class MovementController : MonoBehaviour
         _smoothedMovementInput = Vector2.SmoothDamp(
             _smoothedMovementInput,
             _movementInput,
-            ref _smooothVelocity,
+            ref _smoothVelocity,
             0.1f);
 
         _rigidbody.velocity = _smoothedMovementInput * speed;
