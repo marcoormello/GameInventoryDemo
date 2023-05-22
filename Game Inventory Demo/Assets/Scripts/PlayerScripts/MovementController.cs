@@ -5,8 +5,6 @@ public class MovementController : MonoBehaviour
 {  
     [SerializeField]
     private float speed;
-    
-    private float _flipVelocityThreshold = 0.1f;
 
     private Rigidbody2D _rigidbody;
     private Vector2 _movementInput;
@@ -28,8 +26,6 @@ public class MovementController : MonoBehaviour
             0.1f);
 
         _rigidbody.velocity = _smoothedMovementInput * speed;
-
-        SetCharacterOrientation();
     }
     
     private void OnMove(InputValue inputValue)
@@ -37,10 +33,4 @@ public class MovementController : MonoBehaviour
         _movementInput = inputValue.Get<Vector2>();
     }
 
-    private void SetCharacterOrientation()
-    {
-        transform.localScale = _rigidbody.velocity.x > _flipVelocityThreshold
-            ? new Vector3(-1, 1, 1)
-            : new Vector3(1, 1, 1);
-    }
 }

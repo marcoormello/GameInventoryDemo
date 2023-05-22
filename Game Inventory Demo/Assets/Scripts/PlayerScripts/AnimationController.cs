@@ -9,6 +9,8 @@ public class AnimationController : MonoBehaviour
     
     private readonly int moving = Animator.StringToHash("isMoving");
 
+    private const float FlipVelocityThreshold = 0.1f;
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -19,5 +21,15 @@ public class AnimationController : MonoBehaviour
     {
         var isMoving = _rigidbody.velocity.magnitude > 0.1f;
         _animator.SetBool(moving, isMoving);
+        
+        SetCharacterOrientation();
+    }
+    
+    
+    private void SetCharacterOrientation()
+    {
+        transform.localScale = _rigidbody.velocity.x > FlipVelocityThreshold
+            ? new Vector3(-1, 1, 1)
+            : new Vector3(1, 1, 1);
     }
 }
