@@ -95,5 +95,6 @@ public class UniversalObjectPool : MonoBehaviour
         obj.SetActive(false);
         activeList.Remove(obj);
         objectPool.Add(obj);
+        obj.transform.SetParent(transform);
     }
 }

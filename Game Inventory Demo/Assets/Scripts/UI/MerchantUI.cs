@@ -46,6 +46,8 @@ public class MerchantUI : MonoBehaviour
         OpenMerchantUI();
         
         OnMerchantUIActive?.Invoke(true);
+
+        UpdateCurrency(CurrencyController.GetPlayerCurrency());
     }
     
 
@@ -75,7 +77,7 @@ public class MerchantUI : MonoBehaviour
         informationPanel.SetActive(true);
         informationPrompt.text = "Not Enough Coins!";
     }
-
+    
     private void UpdateCurrency(float currentAmount)
     {
         currentCoins.text = currentAmount.ToString(CultureInfo.InvariantCulture);

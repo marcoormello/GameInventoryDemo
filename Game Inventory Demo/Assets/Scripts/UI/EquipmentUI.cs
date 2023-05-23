@@ -114,6 +114,7 @@ public class EquipmentUI : MonoBehaviour
     {
         transform.localScale = new Vector3(0, 0, 0);
         LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.25f).setEase(LeanTweenType.easeSpring);
+        AdjustPanelPosition(false);
     }
     
     public void CloseEquipmentUI()

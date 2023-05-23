@@ -5,7 +5,7 @@ using System.Linq;
 
 public class DataBaseController : MonoBehaviour
 {
-    public string filePath = "Assets/LocalDB/availableItems.json";
+    public TextAsset availableItems;
     private const string ItemSpriteAtlas = "miniature-army1024x768";
 
     public static List<ItemData> AvailableItems;
@@ -19,17 +19,13 @@ public class DataBaseController : MonoBehaviour
 
     private void LoadItemData()
     {
-        if (File.Exists(filePath))
-        {
-            string json = File.ReadAllText(filePath);
+
+        var json = availableItems.text;
         
-            ItemDataWrapper wrapper = JsonUtility.FromJson<ItemDataWrapper>(json);
-            AvailableItems = wrapper.items;
-        }
-        else
-        {
-            Debug.LogError("File not found: " + filePath);
-        }
+        var wrapper = JsonUtility.FromJson<ItemDataWrapper>(json);
+        AvailableItems = wrapper.items;
+        
+
     }
     
     public static Sprite GetImage(ItemData item)
