@@ -34,13 +34,14 @@ public class DataBaseController : MonoBehaviour
     
     public static Sprite GetImage(ItemData item)
     {
-        return itemSprites.SingleOrDefault(s => s.name == item.spritePath);
+        return item == null ? null : itemSprites.SingleOrDefault(s => s.name == item.spritePath);
     }
 }
 
 
 public enum ItemType
 {
+    Default,
     Torso,
     Weapon,
     Head
@@ -52,7 +53,7 @@ public class ItemData
     public string itemName;
     public float price;
     public string spritePath;
-    public ItemType itemType;
+    public string itemType;
 }
 
 [System.Serializable]

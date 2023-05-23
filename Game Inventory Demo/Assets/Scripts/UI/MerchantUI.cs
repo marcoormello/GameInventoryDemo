@@ -18,7 +18,7 @@ public class MerchantUI : MonoBehaviour
     [SerializeField] private Transform sellMenu;
     [SerializeField] private GameObject informationPanel;
     [SerializeField] private TextMeshProUGUI informationPrompt;
-    [SerializeField] private CointainerSlot sellContainer;
+    [SerializeField] private ContainerSlot sellContainer;
     [SerializeField] private GameObject sellConfirmation;
     [SerializeField] private TextMeshProUGUI sellPrice;
     [SerializeField] private TextMeshProUGUI sellName;
@@ -28,7 +28,7 @@ public class MerchantUI : MonoBehaviour
 
     private void Awake()
     {
-        sellContainer = GetComponentInChildren<CointainerSlot>();
+        sellContainer = GetComponentInChildren<ContainerSlot>();
     }
 
     private void OnEnable()

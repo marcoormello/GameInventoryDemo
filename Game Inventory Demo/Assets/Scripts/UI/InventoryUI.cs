@@ -11,7 +11,7 @@ public class InventoryUI : MonoBehaviour
     [Header("InventoryUI References")] 
     
     
-    private static List<CointainerSlot> slots;
+    private static List<ContainerSlot> slots;
     
     private void OnEnable()
     {
@@ -24,7 +24,7 @@ public class InventoryUI : MonoBehaviour
 
     private void Awake()
     {
-        slots = GetComponentsInChildren<CointainerSlot>().ToList();
+        slots = GetComponentsInChildren<ContainerSlot>().ToList();
     }
 
     private void AddItem(GameObject newItem)

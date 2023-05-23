@@ -24,6 +24,12 @@ public class DraggableItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
     {
         _itemImage.raycastTarget = false;
         slotParent = transform.parent;
+
+        if (slotParent.TryGetComponent(out ContainerSlot containerSlot))
+        {
+            containerSlot.ItemRemoved();
+        }
+        
         transform.SetParent(transform.root);
     }
 
