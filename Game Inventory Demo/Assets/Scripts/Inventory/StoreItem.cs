@@ -1,10 +1,14 @@
 
+using System;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class StoreItem : MonoBehaviour
 {
+    public static Action<ItemData> OnBuyRequest;
+
     [Header("Store Item Prefab Rererences")] 
     [SerializeField] private TextMeshProUGUI itemName;
     [SerializeField] private TextMeshProUGUI price;
@@ -31,5 +35,10 @@ public class StoreItem : MonoBehaviour
         {
             Debug.LogError("Failed to load sprite");
         }
+    }
+
+    public void BuyItem()
+    {
+        OnBuyRequest?.Invoke(_currentItemData);
     }
 }

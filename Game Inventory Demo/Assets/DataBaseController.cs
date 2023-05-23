@@ -50,7 +50,7 @@ public enum ItemType
 public class ItemData
 {
     public string itemName;
-    public int price;
+    public float price;
     public string spritePath;
     public ItemType itemType;
 }
