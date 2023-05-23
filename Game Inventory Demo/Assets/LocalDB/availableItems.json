@@ -1,0 +1,203 @@
+
+{
+  "items": [
+  {
+    "itemName": "Wicked Thief's Cloak",
+    "price": 50,
+    "spritePath": "thief-body-green",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Rogue Thief's Cloak",
+    "price": 45,
+    "spritePath": "thief-body-black",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Forest Thief's Cloak",
+    "price": 55,
+    "spritePath": "thief-body-green",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Sword",
+    "price": 100,
+    "spritePath": "sword",
+    "itemType": "Weapon"
+  },
+  {
+    "itemName": "Staff",
+    "price": 80,
+    "spritePath": "staff",
+    "itemType": "Weapon"
+  },
+  {
+    "itemName": "Spear",
+    "price": 90,
+    "spritePath": "spear",
+    "itemType": "Weapon"
+  },
+  {
+    "itemName": "Rare Soldier's Armor",
+    "price": 200,
+    "spritePath": "soldier-body-black",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Normal Soldier's Armor",
+    "price": 150,
+    "spritePath": "thief-body-white",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Epic Soldier's Armor",
+    "price": 300,
+    "spritePath": "thief-body-red",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Shield",
+    "price": 70,
+    "spritePath": "shield",
+    "itemType": "Weapon"
+  },
+  {
+    "itemName": "Rod",
+    "price": 60,
+    "spritePath": "rod",
+    "itemType": "Weapon"
+  },
+  {
+    "itemName": "Northern Priest's Robe",
+    "price": 80,
+    "spritePath": "priest-body-red",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Southern Priest's Robe",
+    "price": 75,
+    "spritePath": "priest-body-blue",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Eastern Priest's Robe",
+    "price": 85,
+    "spritePath": "priest-body-black",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Polearm",
+    "price": 120,
+    "spritePath": "polearm",
+    "itemType": "Weapon"
+  },
+  {
+    "itemName": "Field Peasant's Cloak",
+    "price": 30,
+    "spritePath": "peasant-body-green",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Meadow Peasant's Cloak",
+    "price": 35,
+    "spritePath": "peasant-body-red",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Mountain Peasant's Cloak",
+    "price": 40,
+    "spritePath": "peasant-body-black",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Rich Merchant's Cloak",
+    "price": 250,
+    "spritePath": "merchant-body-yellow",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Poor Merchant's Cloak",
+    "price": 20,
+    "spritePath": "merchant-body-white",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Rare Merchant's Cloak",
+    "price": 150,
+    "spritePath": "merchant-body-black",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Noble Knight's Armor",
+    "price": 350,
+    "spritePath": "knight-body-yellow",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Bastard Knight's Armor",
+    "price": 300,
+    "spritePath": "knight-body-white",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Knight's Armor",
+    "price": 250,
+    "spritePath": "knight-body-black",
+    "itemType": "Torso"
+  },
+  {
+    "itemName": "Normal Helmet",
+    "price": 50,
+    "spritePath": "helmet-blue",
+    "itemType": "Head"
+  },
+  {
+    "itemName": "Rare Helmet",
+    "price": 100,
+    "spritePath": "helmet-white",
+    "itemType": "Head"
+  },
+  {
+    "itemName": "Epic Helmet",
+    "price": 150,
+    "spritePath": "helmet-black",
+    "itemType": "Head"
+  },
+  {
+    "itemName": "Normal Hat",
+    "price": 30,
+    "spritePath": "hat-blue",
+    "itemType": "Head"
+  },
+  {
+    "itemName": "Rare Hat",
+    "price": 60,
+    "spritePath": "hat-white",
+    "itemType": "Head"
+  },
+  {
+    "itemName": "Epic Hat",
+    "price": 90,
+    "spritePath": "hat-black",
+    "itemType": "Head"
+  },
+  {
+    "itemName": "Axe",
+    "price": 110,
+    "spritePath": "axe",
+    "itemType": "Weapon"
+  },
+  {
+    "itemName": "Bow",
+    "price": 80,
+    "spritePath": "bow",
+    "itemType": "Weapon"
+  },
+  {
+    "itemName": "Arrow",
+    "price": 5,
+    "spritePath": "arrow",
+    "itemType": "Weapon"
+  }
+]
+}
