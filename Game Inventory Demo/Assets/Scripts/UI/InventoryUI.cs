@@ -1,5 +1,4 @@
-using System;
-using System.Collections;
+
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -17,8 +16,8 @@ public class InventoryUI : MonoBehaviour
     {
         InventoryController.OnAddItemToInventory += AddItem;
         
-        transform.localScale = new Vector3(0, 0, 0);
-        LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.25f);
+        OpenInventoryUI();
+
     }
     private void OnDisable()
     {
@@ -58,7 +57,12 @@ public class InventoryUI : MonoBehaviour
         // All slots are occupied
         return true;
     }
-
+    
+    public void OpenInventoryUI()
+    {
+        transform.localScale = new Vector3(0, 0, 0);
+        LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.25f).setEase(LeanTweenType.easeSpring);
+    }
     public void CloseInventoryUI()
     {
         LeanTween.scale(gameObject, new Vector3(0, 0, 0), 0.5f).setOnComplete(Deactivate);

@@ -410,7 +410,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300266, guid: 15b2d2faaecad4bfb9edc6585d94f509, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -418,7 +418,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1000012526242056
@@ -609,6 +609,7 @@ GameObject:
   - component: {fileID: 3722442201551761484}
   - component: {fileID: 8390226148259270767}
   - component: {fileID: 2802549287678629075}
+  - component: {fileID: 159996983}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Untagged
@@ -728,6 +729,27 @@ MonoBehaviour:
   bodyDefault: {fileID: 21300114, guid: 15b2d2faaecad4bfb9edc6585d94f509, type: 3}
   backDefault: {fileID: 0}
   frontDefault: {fileID: 0}
+--- !u!50 &159996983
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012663239756}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 2
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1000012730742446
 GameObject:
   m_ObjectHideFlags: 0

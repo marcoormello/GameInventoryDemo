@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
@@ -9,6 +7,8 @@ using UnityEngine.UI;
 public class MerchantUI : MonoBehaviour
 {
     public static Action<InventoryItem> OnItemSell;
+    public static Action<bool> OnMerchantUIActive;
+    
 
     [Header("MerchantUI References")] 
     [SerializeField] private TextMeshProUGUI currentCoins;
@@ -29,6 +29,8 @@ public class MerchantUI : MonoBehaviour
     private void Awake()
     {
         sellContainer = GetComponentInChildren<ContainerSlot>();
+        
+        gameObject.SetActive(false);
     }
 
     private void OnEnable()
@@ -41,8 +43,9 @@ public class MerchantUI : MonoBehaviour
         
         sellMenu.gameObject.SetActive(false);
 
-        transform.localScale = new Vector3(0, 0, 0);
-        LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.25f);
+        OpenMerchantUI();
+        
+        OnMerchantUIActive?.Invoke(true);
     }
     
 
@@ -53,6 +56,8 @@ public class MerchantUI : MonoBehaviour
         TransactionController.OnTransactionSuccessful -= TransactionSuccessful;
         TransactionController.OnInventoryFull -= InventoryFull;
         sellContainer.OnSlotOccupied -= SellItemBehaviour;
+        
+        OnMerchantUIActive?.Invoke(false);
     }
 
     private void TransactionSuccessful()
@@ -104,15 +109,21 @@ public class MerchantUI : MonoBehaviour
     }
     
 
-    public void ConfirmedSell()
+    private void ConfirmedSell()
     {
         OnItemSell?.Invoke(_selectedItem);
         CleanSellUI();
     }
 
+    private void OpenMerchantUI()
+    {
+        transform.localScale = new Vector3(0, 0, 0);
+        LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.25f).setEase(LeanTweenType.easeSpring);
+    }
+    
     public void CloseMerchantUI()
     {
-        LeanTween.scale(gameObject, new Vector3(0, 0, 0), 0.5f).setOnComplete(Deactivate);
+        LeanTween.scale(gameObject, new Vector3(0, 0, 0), 0.5f).setOnComplete(Deactivate).setEase(LeanTweenType.easeSpring);
     }
 
     private void Deactivate()

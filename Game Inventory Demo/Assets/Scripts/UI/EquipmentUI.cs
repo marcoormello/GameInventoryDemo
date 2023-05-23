@@ -21,16 +21,33 @@ public class EquipmentUI : MonoBehaviour
         bodySlot.OnSlotOccupied += UpdateBodySprite;
         backSlot.OnSlotOccupied += UpdateBackSprite;
         frontSlot.OnSlotOccupied += UpdateFrontSprite;
+
+        MerchantUI.OnMerchantUIActive += AdjustPanelPosition;
         
-        transform.localScale = new Vector3(0, 0, 0);
-        LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.25f);
+        OpenEquipmentUI();
+        
     }
+
+    private void AdjustPanelPosition(bool state)
+    {
+        if (state)
+        {
+            LeanTween.moveLocalX(gameObject, -614f, 0.2f).setEase(LeanTweenType.easeInOutQuart);
+        }
+        else
+        {
+            LeanTween.moveLocalX(gameObject, -372.5f, 0.2f).setEase(LeanTweenType.easeInOutQuart);;
+        }
+    }
+
     private void OnDisable()
     {
         headSlot.OnSlotOccupied -= UpdateHeadSprite;
         bodySlot.OnSlotOccupied -= UpdateBodySprite;
         backSlot.OnSlotOccupied -= UpdateBackSprite;
         frontSlot.OnSlotOccupied -= UpdateFrontSprite;
+        
+        MerchantUI.OnMerchantUIActive -= AdjustPanelPosition;
     }
 
     private void UpdateFrontSprite(GameObject obj)
@@ -92,10 +109,16 @@ public class EquipmentUI : MonoBehaviour
             OnUpdateHead?.Invoke(DataBaseController.GetImage(itemData));
         }  
     }
+
+    private void OpenEquipmentUI()
+    {
+        transform.localScale = new Vector3(0, 0, 0);
+        LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.25f).setEase(LeanTweenType.easeSpring);
+    }
     
     public void CloseEquipmentUI()
     {
-        LeanTween.scale(gameObject, new Vector3(0, 0, 0), 0.5f).setOnComplete(Deactivate);
+        LeanTween.scale(gameObject, new Vector3(0, 0, 0), 0.5f).setOnComplete(Deactivate).setEase(LeanTweenType.easeSpring);
     }
 
     private void Deactivate()
