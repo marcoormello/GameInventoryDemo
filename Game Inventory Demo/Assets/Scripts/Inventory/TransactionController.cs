@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Globalization;
 using UnityEngine;
 
 public class TransactionController : MonoBehaviour
@@ -10,17 +11,20 @@ public class TransactionController : MonoBehaviour
     
     private CurrencyController _currencyController;
     private InventoryController _inventoryController;
-    
+
 
 
     private void OnEnable()
     {
         StoreItem.OnBuyRequest += BuyRequest;
+        MerchantUI.OnItemSell += SellRequest;
     }
+
 
     private void OnDisable()
     {
         StoreItem.OnBuyRequest -= BuyRequest;
+        MerchantUI.OnItemSell -= SellRequest;
     }
 
     private void Awake()
@@ -46,6 +50,12 @@ public class TransactionController : MonoBehaviour
         
         OnTransactionSuccessful?.Invoke();
         _inventoryController.SendItemToInventory(itemData);
+    }
+    
+    private void SellRequest(InventoryItem inventoryItem)
+    {
+        _currencyController.SellTransaction(inventoryItem.currentItemData.price);
+        _inventoryController.ReturnToPool(inventoryItem.gameObject);
         
     }
 

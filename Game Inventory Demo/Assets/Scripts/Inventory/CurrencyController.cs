@@ -44,4 +44,9 @@ public class CurrencyController : MonoBehaviour
         return false;
     }
     
+    public void SellTransaction(float cost)
+    {
+        IncreaseCurrency(cost);
+    }
+    
 }

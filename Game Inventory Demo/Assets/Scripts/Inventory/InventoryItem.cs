@@ -10,12 +10,12 @@ public class InventoryItem : MonoBehaviour
     [Header("Inventory Item References")] 
     [SerializeField] private Image image;
 
-    private ItemData _currentItemData;
+    public ItemData currentItemData;
     
     
     public void Initialize(ItemData itemData)
     {
-        _currentItemData = itemData;
+        currentItemData = itemData;
         image.sprite = DataBaseController.GetImage(itemData);
     }
 }

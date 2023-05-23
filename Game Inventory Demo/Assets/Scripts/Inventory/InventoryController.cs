@@ -26,4 +26,9 @@ public class InventoryController : MonoBehaviour
         
         OnAddItemToInventory?.Invoke(newItem);
     }
+
+    public void ReturnToPool(GameObject gameObject)
+    {
+        _pool.ReturnObject(gameObject, inventoryItemPrefab);
+    }
 }
