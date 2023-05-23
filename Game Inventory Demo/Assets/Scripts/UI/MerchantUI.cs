@@ -40,6 +40,9 @@ public class MerchantUI : MonoBehaviour
         sellContainer.OnSlotOccupied += SellItemBehaviour;
         
         sellMenu.gameObject.SetActive(false);
+
+        transform.localScale = new Vector3(0, 0, 0);
+        LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.25f);
     }
     
 
@@ -105,5 +108,15 @@ public class MerchantUI : MonoBehaviour
     {
         OnItemSell?.Invoke(_selectedItem);
         CleanSellUI();
+    }
+
+    public void CloseMerchantUI()
+    {
+        LeanTween.scale(gameObject, new Vector3(0, 0, 0), 0.5f).setOnComplete(Deactivate);
+    }
+
+    private void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 }

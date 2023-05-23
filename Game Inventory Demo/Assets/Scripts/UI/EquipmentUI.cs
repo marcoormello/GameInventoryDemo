@@ -22,7 +22,8 @@ public class EquipmentUI : MonoBehaviour
         backSlot.OnSlotOccupied += UpdateBackSprite;
         frontSlot.OnSlotOccupied += UpdateFrontSprite;
         
-
+        transform.localScale = new Vector3(0, 0, 0);
+        LeanTween.scale(gameObject, new Vector3(1, 1, 1), 0.25f);
     }
     private void OnDisable()
     {
@@ -90,6 +91,16 @@ public class EquipmentUI : MonoBehaviour
             var itemData = inventoryItem.currentItemData;
             OnUpdateHead?.Invoke(DataBaseController.GetImage(itemData));
         }  
+    }
+    
+    public void CloseEquipmentUI()
+    {
+        LeanTween.scale(gameObject, new Vector3(0, 0, 0), 0.5f).setOnComplete(Deactivate);
+    }
+
+    private void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 
 
